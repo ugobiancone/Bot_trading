@@ -1,3 +1,3 @@
 import Bot
 
-Bot.BotSMA('UBER')
+Bot.BotSMA('PX1')
