@@ -1,3 +1,3 @@
 import Bot
 
-Bot.BotSMA('PX1')
+Bot.BotSMA('CAC')
