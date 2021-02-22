@@ -16,11 +16,14 @@ while (dt < other_time):
         Achat = d2[0]
         bank.buy()
         print('buy')
+        print(bank.get_bank())
     elif(test =='sell'):
         data = yf.download(tickers=stock, period='1d', interval='1m')
         d2 = data['Close'].tail(1).to_numpy()
         vente = (d2[0]/Achat)*100
         bank.sell(vente)
+        print('sell')
+        print(bank.get_bank())
 
     time.sleep(60)
     dt = datetime.datetime.now().time()
