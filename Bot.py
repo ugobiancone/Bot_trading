@@ -37,21 +37,16 @@ def decision(stock):
         elif(ind.SMA(data,30)>ind.SMA(data,100)):
             var = 1
 
-
 def BotSMA(stock):
-    dt = datetime.datetime.now().time()
-    print(str(dt))
-    other_time = datetime.time.fromisoformat('18:30')
-    while (dt < other_time):
-        temp = decision(stock)
-        if (temp == 1):
-            print ('buy')
-        elif(temp == -1):
-            print ('sell')
-        else:
-            print ('wait')
-        dt = datetime.datetime.now().time()
-        print(str(dt))
-        time.sleep(60)
-        dt = datetime.datetime.now().time()
-        print(str(dt))
+    
+    temp = decision(stock)
+    if (temp == 1):
+        print ('buy')
+        return 'buy'
+    elif(temp == -1):
+        print ('sell')
+        return 'sell'
+    else:
+        print ('wait')
+        return 'wait'
+

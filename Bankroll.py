@@ -1,4 +1,4 @@
-class Bankroll:
+class bankroll:
     def __init__(self, bank):
         self.bank = bank
     
