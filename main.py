@@ -7,9 +7,9 @@ import yfinance as yf
 bank = Bankroll.bankroll(1000)
 Achat = 0
 dt = datetime.datetime.now().time()
-other_time = datetime.time.fromisoformat('18:30')
+other_time = datetime.time.fromisoformat('21:00')
 while (dt < other_time):
-    test = Bot.BotSMA('UBER')
+    test = Bot.BotSMA('AAPL')
     if(test == 'buy'):
         data = yf.download(tickers=stock, period='1d', interval='1m')
         d2 = data['Close'].tail(1).to_numpy()
