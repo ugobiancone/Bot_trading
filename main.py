@@ -30,6 +30,7 @@ if(dt>=other_time):
     d2 = data['Close'].tail(1).to_numpy()
     vente = (d2[0]/Achat)*100
     bank.sell(vente)
+    print(bank.get_bank())
 
     
 
