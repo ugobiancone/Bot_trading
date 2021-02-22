@@ -16,7 +16,7 @@ while (dt < other_time):
         Achat = d2[0]
         bank.buy()
         print('buy')
-        print(bank.get_bank())
+        print(d2[0])
     elif(test =='sell'):
         data = yf.download(tickers='AAPL', period='1d', interval='1m')
         d2 = data['Close'].tail(1).to_numpy()
