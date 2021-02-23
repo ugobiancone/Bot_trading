@@ -9,16 +9,16 @@ Achat = 0
 dt = datetime.datetime.now().time()
 other_time = datetime.time.fromisoformat('21:00')
 while (dt < other_time):
-    test = Bot.BotSMA('CAC')
+    test = Bot.BotSMA('AAPL')
     if(test == 'buy'):
-        data = yf.download(tickers='CAC', period='1d', interval='1m')
+        data = yf.download(tickers='AAPL', period='1d', interval='1m')
         d2 = data['Close'].tail(1).to_numpy()
         Achat = d2[0]
         bank.buy()
         print('buy')
-        print(bank.get_bank())
+        print(d2[0])
     elif(test =='sell'):
-        data = yf.download(tickers='CAC', period='1d', interval='1m')
+        data = yf.download(tickers='AAPL', period='1d', interval='1m')
         d2 = data['Close'].tail(1).to_numpy()
         vente = (d2[0]/Achat)*100
         bank.sell(vente)
@@ -29,7 +29,7 @@ while (dt < other_time):
     dt = datetime.datetime.now().time()
 
 if(dt>=other_time):
-    data = yf.download(tickers='CAC', period='1d', interval='1m')
+    data = yf.download(tickers='AAPL', period='1d', interval='1m')
     d2 = data['Close'].tail(1).to_numpy()
     vente = (d2[0]/Achat)*100
     bank.sell(vente)
